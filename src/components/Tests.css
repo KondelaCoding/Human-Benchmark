@@ -1,0 +1,38 @@
+.tests-card {
+  display: flex;
+  justify-content: center;
+  margin: 200px;
+}
+
+.tests-container {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 300px 300px;
+  gap: 30px;
+}
+
+.tests-item {
+  width: 300px;
+  height: 300px;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  transition: 0.2s ease-out;
+}
+
+.tests-item:hover {
+  transform: translateY(-10px);
+  transition: 0.2s ease-out;
+}
+.tests-item:hover img {
+  filter: invert(64%) sepia(95%) saturate(2070%) hue-rotate(358deg)
+    brightness(100%) contrast(107%);
+}
+
+.tests-item img {
+  width: 100px;
+  filter: invert(71%) sepia(57%) saturate(528%) hue-rotate(208deg)
+    brightness(90%) contrast(95%);
+}

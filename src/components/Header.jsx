@@ -4,7 +4,7 @@ import "./Header.css";
 export default function Header() {
   function handleGetStarted() {
     window.scrollTo({
-      top: 600,
+      top: 700,
       left: 0,
       behavior: "smooth",
     });
