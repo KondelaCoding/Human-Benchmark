@@ -1,10 +1,16 @@
-import Header from "../components/Header";
+import Navbar from "../components/Navbar";
 
 export default function NoPage() {
   return (
     <>
-      <Header />
-      <h2>Error: 404</h2>
+      <Navbar />
+      <h2
+        style={{
+          marginTop: 100,
+        }}
+      >
+        Error: 404
+      </h2>
     </>
   );
 }

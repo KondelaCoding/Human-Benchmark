@@ -8,18 +8,18 @@ export default function Navbar() {
         <div className="nav-content">
           <div className="nav-left">
             <img src={Logo} alt="logo" id="logo-home" />
-            <a href="https://www.google.com" className="nav-item">
+            <a href="/home" className="nav-item">
               Home
             </a>
-            <a href="https://www.google.com" className="nav-item">
+            <a href="/about" className="nav-item">
               About
             </a>
-            <a href="https://www.google.com" className="nav-item">
+            <a href="contact" className="nav-item">
               Contact
             </a>
           </div>
           <div className="nav-right">
-            <a href="https://www.google.com" className="nav-item">
+            <a href="/support" className="nav-item">
               Support
             </a>
           </div>
