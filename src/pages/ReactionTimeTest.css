@@ -10,24 +10,50 @@
   align-items: center;
   color: white;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 
-.test-image {
-  width: 250px;
+.start-test-image,
+.wait-test-image,
+.bad-result-test-image,
+.good-result-test-image {
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3));
   filter: brightness(0) invert(1);
 }
 
-.test-title {
+.start-test-image {
+  width: 250px;
+}
+
+.wait-test-image,
+.bad-result-test-image,
+.good-result-test-image {
+  width: 100px;
+}
+
+.start-test-title,
+.wait-test-title {
   margin: 10px;
 }
 
-.test-description {
+.wait-test-title {
+  font-size: 5rem;
+}
+
+.start-test-description {
   max-width: 700px;
   text-align: center;
   margin: 10px;
 }
 
-.begin-instruction {
+.start-begin-instruction {
   font-size: 4rem;
+}
+
+.red {
+  background-color: #eb3d3d;
+}
+
+.green {
+  background-color: green;
 }

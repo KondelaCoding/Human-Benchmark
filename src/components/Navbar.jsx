@@ -7,7 +7,9 @@ export default function Navbar() {
       <nav className="navbar">
         <div className="nav-content">
           <div className="nav-left">
-            <img src={Logo} alt="logo" id="logo-home" />
+            <a href="/home">
+              <img src={Logo} alt="logo" id="logo-home" />
+            </a>
             <a href="/home" className="nav-item">
               Home
             </a>
