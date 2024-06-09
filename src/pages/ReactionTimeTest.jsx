@@ -8,12 +8,13 @@ import "./ReactionTimeTest.css";
 import React, { useEffect, useState } from "react";
 
 export default function ReactionTimeTest() {
-  const [isClicked, setIsClicked] = useState(false);
   const [isEverStarted, setIsEverStarted] = useState(false);
   const [isStarted, setIsStarted] = useState(false);
   const [score, setScore] = useState(1);
   const [startTime, setStartTime] = useState(0);
   const [endTime, setEndTime] = useState(0);
+  const [delay, setDelay] = useState(0);
+  const [timeoutID, setTimeoutID] = useState(0);
 
   function GoodResultScreen() {
     return (
@@ -24,7 +25,7 @@ export default function ReactionTimeTest() {
             src={Trophy}
             alt="trophy-image"
           />
-          <h1 className="wait-test-title">GOOD {score}</h1>
+          <h1 className="wait-test-title">Score: {score}ms</h1>
         </div>
       </>
     );
@@ -33,7 +34,7 @@ export default function ReactionTimeTest() {
   function BadResultScreen() {
     return (
       <>
-        <div className="reaction-time-test-container" onClick={startTest}>
+        <div className="reaction-time-test-container red" onClick={startTest}>
           <img
             className="bad-result-test-image"
             src={Clock}
@@ -84,15 +85,25 @@ export default function ReactionTimeTest() {
     setIsEverStarted(true);
     setIsStarted(true);
     setStartTime(Date.now());
+    const randomDelay = Math.floor(Math.random() * 5000) + 2000;
+    setDelay(randomDelay);
+    setTimeoutID(
+      setTimeout(() => {
+        document.querySelector(
+          ".reaction-time-test-container"
+        ).style.backgroundColor = "green";
+      }, randomDelay)
+    );
   }
 
   function calcResult() {
+    clearTimeout(timeoutID);
     setIsStarted(false);
     setEndTime(Date.now());
   }
 
   useEffect(() => {
-    setScore(endTime - startTime);
+    setScore(endTime - startTime - delay - 100);
   }, [endTime, startTime]);
 
   return (
@@ -107,11 +118,6 @@ export default function ReactionTimeTest() {
           <BadResultScreen />
         )
       ) : null}
-      {startTime}
-      <br />
-      {endTime}
-      <br />
-      {score}
       <Footer />
     </>
   );

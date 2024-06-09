@@ -1,6 +1,6 @@
 .reaction-time-test-container {
   margin-top: 80px;
-  margin-bottom: 132px;
+  margin-bottom: 129px;
   width: 100%;
   height: 600px;
   background-color: #7b2cbf;
@@ -11,6 +11,7 @@
   color: white;
   font-size: 1.5rem;
   cursor: pointer;
+  user-select: none;
 }
 
 .start-test-image,
@@ -51,9 +52,5 @@
 }
 
 .red {
-  background-color: #eb3d3d;
-}
-
-.green {
-  background-color: green;
+  background-color: #bf2c2c;
 }
