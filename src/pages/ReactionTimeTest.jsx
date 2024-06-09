@@ -1,9 +1,9 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import ReactionTimeImage from "../assets/reaction-time-test.svg";
-import Clock from "../assets/clock.svg";
-import Trophy from "../assets/trophy.svg";
-import ThreeDots from "../assets/three-dots.svg";
+import ReactionTimeImage from "../assets/reaction-time/reaction-time-test.svg";
+import Clock from "../assets/reaction-time/clock.svg";
+import Trophy from "../assets/reaction-time/trophy.svg";
+import ThreeDots from "../assets/reaction-time/three-dots.svg";
 import "./ReactionTimeTest.css";
 import React, { useEffect, useState } from "react";
 

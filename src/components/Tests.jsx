@@ -1,5 +1,5 @@
 import "./Tests.css";
-import ReactionTimeTest from "../assets/reaction-time-test.svg";
+import ReactionTimeTest from "../assets/reaction-time/reaction-time-test.svg";
 import SequenceMemoryTest from "../assets/sequence-memory-test.svg";
 import AimTrainerTest from "../assets/aim-trainer-test.svg";
 import NumberMemoryTest from "../assets/number-memory-test.svg";
