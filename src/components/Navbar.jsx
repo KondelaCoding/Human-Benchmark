@@ -11,18 +11,22 @@ export default function Navbar() {
               <img src={Logo} alt="logo" id="logo-home" />
             </a>
             <a href="/home" className="nav-item">
-              Home
+              <span>Home</span>
+              <hr className="underline" />
             </a>
             <a href="/about" className="nav-item">
-              About
+              <span>About</span>
+              <hr className="underline" />
             </a>
             <a href="contact" className="nav-item">
-              Contact
+              <span>Contact</span>
+              <hr className="underline" />
             </a>
           </div>
           <div className="nav-right">
             <a href="/support" className="nav-item">
-              Support
+              <span>Support</span>
+              <hr className="underline" />
             </a>
           </div>
         </div>
