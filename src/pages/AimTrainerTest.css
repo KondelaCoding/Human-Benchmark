@@ -1,0 +1,145 @@
+.aim-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 10px;
+  grid-template-areas:
+    "block1 block2 block3 block4 block5"
+    "block6 block7 block8 block9 block10"
+    "block11 block12 block13 block14 block15"
+    "block16 block17 block18 block19 block20"
+    "block21 block22 block23 block24 block25"
+    "block26 block27 block28 block29 block30";
+  max-width: 450px;
+}
+
+.aim-icon {
+  width: 100%;
+  height: 100%;
+  max-width: 100px;
+  filter: brightness(0) invert(1);
+}
+
+.shot {
+  display: none;
+}
+
+@keyframes shrink {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+    display: none;
+  }
+}
+
+.grid-block-1 {
+  grid-area: block1;
+}
+.grid-block-2 {
+  grid-area: block2;
+}
+.grid-block-3 {
+  grid-area: block3;
+}
+.grid-block-4 {
+  grid-area: block4;
+}
+.grid-block-5 {
+  grid-area: block5;
+}
+.grid-block-6 {
+  grid-area: block6;
+}
+.grid-block-7 {
+  grid-area: block7;
+}
+.grid-block-8 {
+  grid-area: block8;
+}
+.grid-block-9 {
+  grid-area: block9;
+}
+.grid-block-10 {
+  grid-area: block10;
+}
+.grid-block-11 {
+  grid-area: block11;
+}
+.grid-block-12 {
+  grid-area: block12;
+}
+.grid-block-13 {
+  grid-area: block13;
+}
+.grid-block-14 {
+  grid-area: block14;
+}
+.grid-block-15 {
+  grid-area: block15;
+}
+.grid-block-16 {
+  grid-area: block16;
+}
+.grid-block-17 {
+  grid-area: block17;
+}
+.grid-block-18 {
+  grid-area: block18;
+}
+.grid-block-19 {
+  grid-area: block19;
+}
+.grid-block-20 {
+  grid-area: block20;
+}
+.grid-block-21 {
+  grid-area: block21;
+}
+.grid-block-22 {
+  grid-area: block22;
+}
+.grid-block-23 {
+  grid-area: block23;
+}
+.grid-block-24 {
+  grid-area: block24;
+}
+.grid-block-25 {
+  grid-area: block25;
+}
+.grid-block-26 {
+  grid-area: block26;
+}
+.grid-block-27 {
+  grid-area: block27;
+}
+.grid-block-28 {
+  grid-area: block28;
+}
+.grid-block-29 {
+  grid-area: block29;
+}
+.grid-block-30 {
+  grid-area: block30;
+}
+
+.end-screen {
+  background-color: green;
+}
+
+@media screen and (min-width: 768px) {
+  .aim-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+      "block1 block2 block3 block4 block5 block6"
+      "block7 block8 block9 block10 block11 block12"
+      "block13 block14 block15 block16 block17 block18"
+      "block19 block20 block21 block22 block23 block24"
+      "block25 block26 block27 block28 block29 block30";
+    max-width: 1150px;
+  }
+}

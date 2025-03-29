@@ -35,6 +35,7 @@
 .start-test-title,
 .wait-test-title {
   margin: 10px;
+  text-align: center;
 }
 
 .wait-test-title {
@@ -49,6 +50,7 @@
 
 .start-begin-instruction {
   font-size: 4rem;
+  text-align: center;
 }
 
 .red {

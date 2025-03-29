@@ -18,16 +18,14 @@ export default function Tests() {
           </div>
         </a>
         <a href="/sequencememory">
-          <div id="sequence-memory" className="tests-item wip">
+          <div id="sequence-memory" className="tests-item">
             <img src={SequenceMemoryTest} alt="test-image" />
             <h3 className="test-title">Sequence Memory</h3>
-            <p className="test-description">
-              Remember an increasingly long pattern of button presses.
-            </p>
+            <p className="test-description">Remember an increasingly long pattern of button presses.</p>
           </div>
         </a>
         <a href="/aimtrainer">
-          <div id="aim-trainer" className="tests-item wip">
+          <div id="aim-trainer" className="tests-item">
             <img src={AimTrainerTest} alt="test-image" />
             <h3 className="test-title">Aim Trainer</h3>
             <p className="test-description">
@@ -48,9 +46,7 @@ export default function Tests() {
           <div id="verbal-memory" className="tests-item wip">
             <img src={VerbalMemoryTest} alt="test-image" />
             <h3 className="test-title">Verbal Memory</h3>
-            <p className="test-description">
-              Keep as many words in short term memory as possible.
-            </p>
+            <p className="test-description">Keep as many words in short term memory as possible.</p>
           </div>
         </a>
         <a href="/chimptest">

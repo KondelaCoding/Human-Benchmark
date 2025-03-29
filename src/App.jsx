@@ -5,6 +5,7 @@ import About from "./pages/About";
 import NoPage from "./pages/NoPage";
 import ReactionTimeTest from "./pages/ReactionTimeTest";
 import SequenceMemoryTest from "./pages/SequenceMemoryTest";
+import AimTrainerTest from "./pages/AimTrainerTest";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/reactiontime" element={<ReactionTimeTest />}></Route>
           <Route path="/sequencememory" element={<SequenceMemoryTest />}></Route>
+          <Route path="/aimtrainer" element={<AimTrainerTest />}></Route>
           <Route path="*" element={<NoPage />}></Route>
         </Routes>
       </BrowserRouter>
