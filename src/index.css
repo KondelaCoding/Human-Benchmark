@@ -1,6 +1,11 @@
+html {
+  min-height: 100vh;
+}
+
 body {
   margin: 0;
   background-color: #efe9f3;
+  min-height: 100vh;
 }
 
 .btn {
@@ -22,4 +27,11 @@ body {
 .btn:active {
   opacity: 0.8;
   transition: 0.1s ease-out;
+}
+
+.screen-height {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

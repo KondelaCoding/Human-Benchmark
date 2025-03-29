@@ -25,3 +25,57 @@
 .start-test-image {
   width: 250px;
 }
+
+.debug {
+  background-color: #2cbf2c;
+  width: fit-content;
+  padding: 10px;
+  display: fixed;
+  bottom: 0;
+  left: 0;
+  margin-top: 100px;
+}
+
+.block-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.block {
+  background-color: #dec9e9;
+  border-radius: 12px;
+  display: flex;
+  width: 100%;
+  height: 100px;
+  aspect-ratio: 1;
+  max-width: 100px;
+  max-height: 100px;
+  transition: 300ms;
+}
+
+.block:hover {
+  background-color: #cfa7e4;
+}
+
+.block:active {
+  background-color: #cfa7e4;
+  transform: scale(0.9);
+  transition: 100ms;
+}
+
+.block.disabled {
+  background-color: #b6a2c0;
+  pointer-events: none;
+}
+
+.block.selected {
+  background-color: #83d95e;
+  pointer-events: none;
+  transform: scale(1.1);
+  transition: 200ms;
+}
+
+.game-over {
+  background-color: #bf2c2c;
+}

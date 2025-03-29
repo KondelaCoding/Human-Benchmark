@@ -5,7 +5,7 @@ import Clock from "../assets/reaction-time/clock.svg";
 import Trophy from "../assets/reaction-time/trophy.svg";
 import ThreeDots from "../assets/reaction-time/three-dots.svg";
 import "./ReactionTimeTest.css";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ReactionTimeTest() {
   const [isEverStarted, setIsEverStarted] = useState(false);
@@ -20,11 +20,7 @@ export default function ReactionTimeTest() {
     return (
       <>
         <div className="reaction-time-test-container" onClick={startTest}>
-          <img
-            className="good-result-test-image"
-            src={Trophy}
-            alt="trophy-image"
-          />
+          <img className="good-result-test-image" src={Trophy} alt="trophy-image" />
           <h1 className="wait-test-title">Score: {score}ms</h1>
         </div>
       </>
@@ -35,11 +31,7 @@ export default function ReactionTimeTest() {
     return (
       <>
         <div className="reaction-time-test-container red" onClick={startTest}>
-          <img
-            className="bad-result-test-image"
-            src={Clock}
-            alt="clock-image"
-          />
+          <img className="bad-result-test-image" src={Clock} alt="clock-image" />
           <h1 className="bad-result-test-title">You clicked too soon</h1>
         </div>
       </>
@@ -50,15 +42,11 @@ export default function ReactionTimeTest() {
     return (
       <>
         <div className="reaction-time-test-container" onClick={startTest}>
-          <img
-            className="start-test-image"
-            src={ReactionTimeImage}
-            alt="reaction-time-image"
-          />
+          <img className="start-test-image" src={ReactionTimeImage} alt="reaction-time-image" />
           <h1 className="start-test-title">Reaction Time</h1>
           <p className="start-test-description">
-            Simple task to test your reaction time, wait for the screen to turn
-            green and click it as fast as possible. Good luck!
+            Simple task to test your reaction time, wait for the screen to turn green and click it as fast as possible.
+            Good luck!
           </p>
           <h1 className="start-begin-instruction">Click the screen to begin</h1>
         </div>
@@ -70,11 +58,7 @@ export default function ReactionTimeTest() {
     return (
       <>
         <div className="reaction-time-test-container" onClick={calcResult}>
-          <img
-            className="wait-test-image"
-            src={ThreeDots}
-            alt="three-dots-image"
-          />
+          <img className="wait-test-image" src={ThreeDots} alt="three-dots-image" />
           <h1 className="wait-test-title">Wait for green</h1>
         </div>
       </>
@@ -89,9 +73,7 @@ export default function ReactionTimeTest() {
     setDelay(randomDelay);
     setTimeoutID(
       setTimeout(() => {
-        document.querySelector(
-          ".reaction-time-test-container"
-        ).style.backgroundColor = "green";
+        document.querySelector(".reaction-time-test-container").style.backgroundColor = "green";
       }, randomDelay)
     );
   }
@@ -107,18 +89,12 @@ export default function ReactionTimeTest() {
   }, [endTime, startTime]);
 
   return (
-    <>
+    <div className="screen-height">
       <Navbar />
       {!isEverStarted ? <StartScreenState /> : null}
       {isStarted ? <StartedGameScreenState /> : null}
-      {!isStarted && isEverStarted ? (
-        score > 0 ? (
-          <GoodResultScreen />
-        ) : (
-          <BadResultScreen />
-        )
-      ) : null}
+      {!isStarted && isEverStarted ? score > 0 ? <GoodResultScreen /> : <BadResultScreen /> : null}
       <Footer />
-    </>
+    </div>
   );
 }
