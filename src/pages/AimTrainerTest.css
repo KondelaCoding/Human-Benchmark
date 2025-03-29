@@ -18,20 +18,74 @@
   height: 100%;
   max-width: 100px;
   filter: brightness(0) invert(1);
+  cursor: crosshair;
+  position: relative;
 }
+
+.aim-icon img {
+  width: 100%;
+  height: 100%;
+  max-width: 100px;
+  filter: brightness(0) invert(1);
+}
+
+/* .aim-icon:active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  opacity: 0.5;
+  border-radius: 999px;
+} */
 
 .shot {
-  display: none;
+  animation: shrink-and-fade 0.2s forwards;
+  pointer-events: none;
+  position: relative;
 }
 
-@keyframes shrink {
+.shot::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  border-radius: 999px;
+  animation: expand-and-fade 0.2s forwards;
+}
+
+@keyframes shrink-and-fade {
   0% {
     transform: scale(1);
+    opacity: 1;
   }
   100% {
     transform: scale(0);
-    display: none;
   }
+}
+
+@keyframes expand-and-fade {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.hidden {
+  display: none;
 }
 
 .grid-block-1 {

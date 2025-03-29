@@ -14,6 +14,13 @@ const AimTrainerTest = () => {
   const [finalTime, setFinalTime] = useState(null); // Final time when the score reaches 10
   const [isStarted, setIsStarted] = useState(false); // To control the game state
   const [isEverStarted, setIsEverStarted] = useState(false); // To control the game state
+  const [delayedShotTargets, setDelayedShotTargets] = useState([]); // To control the game state
+
+  useEffect(() => {
+    setTimeout(() => {
+      setDelayedShotTargets(shotTargets);
+    }, 100);
+  }, [shotTargets]);
 
   const timerRef = useRef(0); // Ref to track the timer value
   const intervalRef = useRef(null); // Ref to store the interval ID
@@ -97,14 +104,16 @@ const AimTrainerTest = () => {
       <div className="test-container">
         <div className="aim-grid">
           {Array.from({ length: 10 }, (_, index) => (
-            <img
+            <div
               key={index}
-              src={AimTrainerTestImage}
-              alt={`aim-${index + 1}`}
-              className={`aim-icon ${shotTargets.includes(index + 1) ? "shot" : ""} grid-block-${ocupiedBlocks[index]}`}
+              className={`aim-icon ${shotTargets.includes(index + 1) ? "shot" : ""} grid-block-${
+                ocupiedBlocks[index]
+              } ${delayedShotTargets.includes(index + 1) ? "hidden" : ""}`}
               id={`aim-${index + 1}`}
               onClick={handleShootTarget(index + 1)}
-            />
+            >
+              <img src={AimTrainerTestImage} alt={`aim-${index + 1}`} />
+            </div>
           ))}
         </div>
       </div>
