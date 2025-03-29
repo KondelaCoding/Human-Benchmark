@@ -6,6 +6,9 @@ import Trophy from "../assets/reaction-time/trophy.svg";
 import ThreeDots from "../assets/reaction-time/three-dots.svg";
 import "./ReactionTimeTest.css";
 import { useEffect, useState } from "react";
+import ClickSound from "../assets/click-sound.wav";
+import SuccessSound from "../assets/success-sound.wav";
+import FailureSound from "../assets/failure-sound.wav";
 
 export default function ReactionTimeTest() {
   const [isEverStarted, setIsEverStarted] = useState(false);
@@ -15,6 +18,13 @@ export default function ReactionTimeTest() {
   const [endTime, setEndTime] = useState(0);
   const [delay, setDelay] = useState(0);
   const [timeoutID, setTimeoutID] = useState(0);
+
+  const clickSound = new Audio(ClickSound);
+  const successSound = new Audio(SuccessSound);
+  const failureSound = new Audio(FailureSound);
+  clickSound.volume = 0.5;
+  successSound.volume = 0.5;
+  failureSound.volume = 0.5;
 
   function GoodResultScreen() {
     return (
@@ -69,6 +79,7 @@ export default function ReactionTimeTest() {
     setIsEverStarted(true);
     setIsStarted(true);
     setStartTime(Date.now());
+    clickSound.play();
     const randomDelay = Math.floor(Math.random() * 5000) + 2000;
     setDelay(randomDelay);
     setTimeoutID(
@@ -82,6 +93,13 @@ export default function ReactionTimeTest() {
     clearTimeout(timeoutID);
     setIsStarted(false);
     setEndTime(Date.now());
+
+    const reactionTime = Date.now() - startTime - delay - 100;
+    if (reactionTime > 0) {
+      successSound.play(); // Play success sound for a valid reaction time
+    } else {
+      failureSound.play(); // Play failure sound if the user clicks too soon
+    }
   }
 
   useEffect(() => {

@@ -2,16 +2,10 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import SequenceMemoryImage from "../assets/sequence-memory-test.svg";
 import "./SequenceMemoryTest.css";
-import { useEffect, useState, useRef } from "react";
-
-//* User starts a game
-//* GAME LOOP
-//? 1. Show a sequence of blocks
-//! 2. User clicks the blocks in the same order
-//! 3. If the user clicks the blocks in the same order, add a point and maybe a fancy animation
-//! 4. If the user clicks the blocks in the wrong order, he looses a game
-//! 5. Show the score and a button to play again
-//! 6. If the user clicks the button, reset the game and start again
+import { useEffect, useState } from "react";
+import ClickSound from "../assets/click-sound.wav";
+import SuccessSound from "../assets/success-sound.wav";
+import FailureSound from "../assets/failure-sound.wav";
 
 export default function ReactionTimeTest() {
   const [isEverStarted, setIsEverStarted] = useState(false);
@@ -34,14 +28,21 @@ export default function ReactionTimeTest() {
 
     // Update the state and use the new sequence directly
     setTimeout(() => {
-      console.log("show sequence", newSequence);
       showSequenceOfBlocks(newSequence); // Use the new sequence directly
       setSequence(newSequence);
     }, 1000);
   };
 
   const handleBlockClick = (blockNumber) => () => {
-    console.log("block clicked", blockNumber);
+    const clickSound = new Audio(ClickSound);
+    const successSound = new Audio(SuccessSound);
+    const failureSound = new Audio(FailureSound);
+    clickSound.volume = 0.5;
+    successSound.volume = 0.5;
+    failureSound.volume = 0.5;
+
+    clickSound.play();
+
     if (userSequence.length < sequence.length - 1) {
       setUserSequence((prev) => [...prev, blockNumber]);
     } else if (userSequence.length === sequence.length - 1) {
@@ -49,6 +50,7 @@ export default function ReactionTimeTest() {
       // Check if the user clicked the blocks in the same order
       userSequence.push(blockNumber); // Add the last clicked block
       if (userSequence.join("") === sequence.join("")) {
+        successSound.play();
         setScore((prev) => prev + 1);
         setUserSequence([]);
         setTimeout(() => {
@@ -57,6 +59,7 @@ export default function ReactionTimeTest() {
           showSequenceOfBlocks([...sequence, newBlock]);
         }, 1000);
       } else {
+        failureSound.play();
         setIsStarted(false);
       }
     }
@@ -64,7 +67,6 @@ export default function ReactionTimeTest() {
 
   const disableAllBlocks = () => {
     const blocks = document.querySelectorAll(".block");
-    console.log(blocks);
     blocks.forEach((block) => {
       block.classList.add("disabled");
     });
