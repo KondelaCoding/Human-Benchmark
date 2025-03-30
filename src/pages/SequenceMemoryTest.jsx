@@ -104,7 +104,7 @@ export default function ReactionTimeTest() {
         return (
           <div className="test-container">
             {blockGrid()}
-            <h1 className="wait-test-title">Score: {score}</h1>
+            <h1>Score: {score}</h1>
           </div>
         );
       } else {

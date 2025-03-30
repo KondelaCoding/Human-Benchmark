@@ -34,7 +34,7 @@ export default function Tests() {
           </div>
         </a>
         <a href="/numbermemory">
-          <div id="number-memory" className="tests-item wip">
+          <div id="number-memory" className="tests-item">
             <img src={NumberMemoryTest} alt="test-image" />
             <h3 className="test-title">Number Memory</h3>
             <p className="test-description">
@@ -43,7 +43,7 @@ export default function Tests() {
           </div>
         </a>
         <a href="/verbalmemory">
-          <div id="verbal-memory" className="tests-item wip">
+          <div id="verbal-memory" className="tests-item">
             <img src={VerbalMemoryTest} alt="test-image" />
             <h3 className="test-title">Verbal Memory</h3>
             <p className="test-description">Keep as many words in short term memory as possible.</p>
